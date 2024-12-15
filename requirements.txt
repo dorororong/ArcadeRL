@@ -1,0 +1,10 @@
+stable-baselines3
+beautifulsoup4
+requests
+Pillow
+numpy
+gymnasium
+matplotlib
+pydirectinput
+pyautogui
+torch
