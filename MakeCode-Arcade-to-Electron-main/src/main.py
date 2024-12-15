@@ -1,0 +1,101 @@
+import logging
+import subprocess
+import sys
+import tempfile
+import shutil
+from argparse import ArgumentParser
+from pathlib import Path
+
+from PIL import Image
+
+from app import app_builder
+from app.app_args import add_app_args
+from utils.download import download
+from utils.logger import create_logger, set_all_stdout_logger_levels
+
+parser = ArgumentParser(prog="MakeCode-Arcade-to-Electron",
+                        description="A program to convert MakeCode Arcade games to "
+                                    "Electron apps.")
+add_app_args(parser)
+args = parser.parse_args()
+
+logger = create_logger(name=__name__, level=logging.INFO)
+set_all_stdout_logger_levels(args.debug)
+logger.debug(f"Received arguments: {args}")
+
+
+def run_cmd(cmd: str, cwd: Path = None):
+    logger.info(f"Running command {cmd}")
+    subprocess.run(cmd, shell=True, check=True, cwd=cwd)
+
+temp_dir = Path.cwd() / "tmp_app_build"
+
+# if temp_dir exitst, remove it
+if temp_dir.exists():
+    logger.debug(f"Removing temporary directory {temp_dir}")
+    shutil.rmtree(temp_dir)
+
+
+
+# Ensure the directory exists
+temp_dir.mkdir(parents=True, exist_ok=True)
+logger.debug(f"Created temporary directory {temp_dir}")
+
+app_path = temp_dir / "app"
+
+app_builder.create_app(app_path, args.name, args.description, args.version,
+                        args.author)
+
+repo_path = app_builder.download_and_extract_game(temp_dir, args.repo, args.version)
+new_bin_js_path = app_builder.copy_bin_js(repo_path, app_path)
+sim_url = app_builder.extract_sim_url(new_bin_js_path)
+sim_html_path = app_builder.download_simulator_html_and_service_worker(app_path,
+                                                                        sim_url)
+css_to_download = app_builder.find_css_to_download(sim_html_path.read_text())
+for css_url in css_to_download:
+    end_part = css_url.split("/")[-1]
+    css_path = app_path / "src" / "fake-net" / end_part
+    logger.info(f"Downloading {css_url} to {css_path}")
+    download(css_url, css_path)
+js_to_download = app_builder.find_js_to_download(sim_html_path.read_text())
+for js_url in js_to_download:
+    end_part = js_url.split("/")[-1]
+    js_path = app_path / "src" / "fake-net" / end_part
+    logger.info(f"Downloading {js_url} to {js_path}")
+    download(js_url, js_path)
+if args.icon:
+    src_icon_path = Path(args.icon).expanduser().resolve().absolute()
+    dest_ico_path = (app_path / "src" / "icon.ico").resolve().absolute()
+    dest_png_path = (app_path / "src" / "icon.png").resolve().absolute()
+    dest_icns_path = (app_path / "src" / "icon.icns").resolve().absolute()
+
+    with Image.open(src_icon_path) as img:
+        if sys.platform == "darwin":
+            logger.info("Converting icon to ICNS format")
+            img.save(dest_icns_path, format="ICNS")
+        elif sys.platform == "win32":
+            logger.info("Converting icon to ICO format")
+            img.save(dest_ico_path, format="ICO")
+        else:
+            logger.info("Converting icon to PNG format")
+            img.save(dest_png_path, format="PNG")
+
+if args.prep_only:
+    logger.info(f"App prepared successfully at {app_path}")
+else:
+    run_cmd("npm install", cwd=app_path)
+    run_cmd("npm run make", cwd=app_path)
+    logger.info(f"App built successfully at {app_path / 'out'}")
+
+
+
+
+'''
+sample game : https://arcade.makecode.com/S13528-34210-66880-94219
+
+# command 
+python src/main.py -r "dorororong/jumping-ball" ^
+-v "1.0.0" -n "jumpingball_game" -a "dorororong" ^
+-d "jumpingball game for RL."
+
+'''
