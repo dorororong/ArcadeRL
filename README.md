@@ -6,7 +6,8 @@ Original Repo : [MakeCode-Arcade_Electron] https://github.com/UnsignedArduino/Ma
 
 
 
-# train_main.py
+# train_main
+main dir for creating env and training the model
 ## env.py
 Implements a Gymnasium-like environment for offline reinforcement learning (RL) algorithms.
 
