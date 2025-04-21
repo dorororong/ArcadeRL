@@ -8,29 +8,29 @@ from PIL import Image, ImageTk
 import pyautogui
 
 # Globals
-current_region = None            # (left, top, width, height)
-regions = {}                     # name -> region tuple
+current_region = None  # holds the last selected region (left, top, width, height)
+regions = {}           # name -> dict with region coords and pixel size
 overlay = None
 canvas = None
 start_x_canvas = start_y_canvas = start_x_root = start_y_root = None
 rect_id = None
-LIVE_INTERVAL_MS = 100           # ms between live frames
+LIVE_INTERVAL_MS = 100  # ms between live frames
 
+# ------------------- Region Selection -------------------
 def add_new_search_region():
     global overlay, canvas, rect_id, start_x_canvas, start_y_canvas, start_x_root, start_y_root
     start_x_canvas = start_y_canvas = start_x_root = start_y_root = rect_id = None
 
     overlay = tk.Toplevel(root)
     overlay.attributes('-fullscreen', True)
-    overlay.attributes('-alpha',   0.3)
+    overlay.attributes('-alpha', 0.3)
     overlay.attributes('-topmost', True)
     overlay.overrideredirect(True)
 
     info = tk.Label(
         overlay,
         text="영역을 드래그하여 선택하세요\n(ESC로 취소)",
-        bg='white', fg='black',
-        font=('Arial', 16)
+        bg='white', fg='black', font=('Arial', 16)
     )
     info.pack(pady=20)
 
@@ -38,9 +38,10 @@ def add_new_search_region():
     canvas.pack(fill="both", expand=True)
 
     canvas.bind("<ButtonPress-1>", on_region_press)
-    canvas.bind("<B1-Motion>",    on_region_drag)
+    canvas.bind("<B1-Motion>", on_region_drag)
     canvas.bind("<ButtonRelease-1>", on_region_release)
     overlay.bind("<Escape>", cancel_selection)
+
 
 def on_region_press(event):
     global start_x_canvas, start_y_canvas, start_x_root, start_y_root, rect_id
@@ -54,6 +55,7 @@ def on_region_press(event):
         outline='red', width=2
     )
 
+
 def on_region_drag(event):
     global rect_id
     if rect_id:
@@ -61,6 +63,7 @@ def on_region_drag(event):
             start_x_canvas, start_y_canvas,
             event.x, event.y
         )
+
 
 def on_region_release(event):
     global current_region, overlay, rect_id
@@ -71,20 +74,21 @@ def on_region_release(event):
     if None in (start_x_root, start_y_root):
         return
 
-    left   = min(start_x_root, end_x_root)
-    top    = min(start_y_root, end_y_root)
-    width  = abs(end_x_root - start_x_root)
-    height = abs(end_y_root - start_y_root)
+    left = min(start_x_root, end_x_root)
+    top = min(start_y_root, end_y_root)
+    w = abs(end_x_root - start_x_root)
+    h = abs(end_y_root - start_y_root)
 
-    if width < 5 or height < 5:
+    if w < 5 or h < 5:
         messagebox.showwarning("선택 오류", "너무 작은 영역입니다 (최소 5×5).")
     else:
-        current_region = (left, top, width, height)
+        current_region = (left, top, w, h)
         status_label.config(
-            text=f"선택된 영역 → left:{left}, top:{top}, w:{width}, h:{height}"
+            text=f"선택된 영역 → left:{left}, top:{top}, w:{w}, h:{h}"
         )
     rect_id = None
     update_button_state()
+
 
 def cancel_selection(event=None):
     global overlay, rect_id
@@ -92,6 +96,7 @@ def cancel_selection(event=None):
         overlay.destroy()
     rect_id = None
 
+# ------------------- Region Management -------------------
 def save_region():
     global current_region, regions
     if not current_region:
@@ -100,25 +105,7 @@ def save_region():
     name = simpledialog.askstring("영역 저장", "저장할 이름을 입력하세요:")
     if not name:
         return
-    regions[name] = current_region
-    update_region_listbox()
-    status_label.config(text=f"저장됨: {name}")
-    update_button_state()
-
-def update_region_listbox():
-    listbox_regions.delete(0, END)
-    for name in regions:
-        listbox_regions.insert(END, name)
-
-def show_live_preview():
-    sel = listbox_regions.curselection()
-    if not sel:
-        messagebox.showwarning("미리보기 오류", "먼저 목록에서 영역을 선택하세요.")
-        return
-    name = listbox_regions.get(sel[0])
-    left, top, w, h = regions[name]
-
-    # get pixel size from entries
+    # get pixel size inputs
     try:
         pw = int(entry_px_width.get())
         ph = int(entry_px_height.get())
@@ -127,9 +114,38 @@ def show_live_preview():
     except ValueError:
         messagebox.showerror("입력 오류", "Pixel Width/Height는 양의 정수여야 합니다.")
         return
+    left, top, w, h = current_region
+    regions[name] = {
+        'left': left,
+        'top': top,
+        'width': w,
+        'height': h,
+        'pixel_width': pw,
+        'pixel_height': ph
+    }
+    update_region_listbox()
+    status_label.config(text=f"저장됨: {name} ({pw}×{ph})")
+    update_button_state()
+
+
+def update_region_listbox():
+    listbox_regions.delete(0, END)
+    for name, cfg in regions.items():
+        listbox_regions.insert(END, f"{name} ({cfg['pixel_width']}×{cfg['pixel_height']})")
+
+# ------------------- Live Preview -------------------
+def show_live_preview():
+    sel = listbox_regions.curselection()
+    if not sel:
+        messagebox.showwarning("미리보기 오류", "먼저 목록에서 영역을 선택하세요.")
+        return
+    key = list(regions.keys())[sel[0]]
+    cfg = regions[key]
+    left, top, w, h = cfg['left'], cfg['top'], cfg['width'], cfg['height']
+    pw, ph = cfg['pixel_width'], cfg['pixel_height']
 
     win = tk.Toplevel(root)
-    win.title(f"Live Preview – {name}")
+    win.title(f"Live Preview – {key}")
     img_label = tk.Label(win)
     img_label.pack()
     fps_label = tk.Label(win, text="FPS: 0.0")
@@ -147,7 +163,7 @@ def show_live_preview():
 
         img = pyautogui.screenshot(region=(left, top, w, h))
         small = img.resize((pw, ph), Image.BILINEAR)
-        disp  = small.resize((w, h), Image.NEAREST)
+        disp = small.resize((w, h), Image.NEAREST)
 
         photo = ImageTk.PhotoImage(disp)
         img_label.config(image=photo)
@@ -157,20 +173,42 @@ def show_live_preview():
 
     update_frame()
 
+# ------------------- Final Save & Exit -------------------
+def finalize_and_exit():
+    if not regions:
+        messagebox.showwarning("저장 오류", "저장된 영역이 없습니다.")
+        return
+    fname = simpledialog.askstring("파일 이름", "저장할 JSON 파일 이름을 입력하세요:")
+    if not fname:
+        return
+    if not fname.lower().endswith('.json'):
+        fname += '.json'
+    config = {'regions': {}}
+    fname = "train_main/" + fname
+    for name, cfg in regions.items():
+        config['regions'][name] = cfg
+    # no global pixel size
+    with open(fname, 'w', encoding='utf-8') as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
+    messagebox.showinfo("완료", f"{fname}에 저장되었습니다.")
+    root.destroy()
+
+# ------------------- Button State Update -------------------
 def update_button_state():
     btn_save.config(state="normal" if current_region else "disabled")
-    sel = listbox_regions.curselection()
-    has_sel = bool(sel)
+    has_sel = bool(listbox_regions.curselection())
     btn_show.config(state="normal" if has_sel else "disabled")
+    btn_finalize.config(state="normal" if regions else "disabled")
 
-# --- Build GUI ---
+# ------------------- GUI Setup -------------------
 root = tk.Tk()
 root.title("영역 선택기")
-root.geometry("420x380")
+root.geometry("420x480")
 
-# Pixel size inputs
+# Pixel size inputs for region
 px_frame = tk.Frame(root)
 px_frame.pack(pady=5)
+import tkinter as _tk
 tk.Label(px_frame, text="Pixel Width:").pack(side="left")
 entry_px_width = tk.Entry(px_frame, width=5)
 entry_px_width.insert(0, "32")
@@ -202,11 +240,17 @@ btn_show = tk.Button(
 )
 btn_show.pack(side="left", padx=5)
 
+btn_finalize = tk.Button(
+    frame_buttons, text="저장 및 종료",
+    command=finalize_and_exit, width=12, state="disabled"
+)
+btn_finalize.pack(side="left", padx=5)
+
 # Status and listbox
 status_label = tk.Label(root, text="No region selected", anchor="w")
 status_label.pack(fill="x", padx=10)
 
-listbox_regions = Listbox(root, height=5)
+listbox_regions = Listbox(root, height=8)
 listbox_regions.pack(fill="x", padx=10, pady=10)
 listbox_regions.bind("<<ListboxSelect>>", lambda e: update_button_state())
 
