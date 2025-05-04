@@ -91,11 +91,8 @@ else:
 
 
 '''
-sample game : https://arcade.makecode.com/S13528-34210-66880-94219
 
 # command 
-python src/main.py -r "dorororong/jumping-ball" ^
--v "1.0.0" -n "jumpingball_game" -a "dorororong" ^
--d "jumpingball game for RL."
+python  MakeCode-Arcade-to-Electron-main/src/main.py -r "dorororong/falling-duck" -v "1.0.0" -n "falling-duck" -a "dorororong" -d "falling-duck"
 
 '''

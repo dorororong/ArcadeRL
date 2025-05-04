@@ -37,7 +37,7 @@ def create_or_load_model(model_dir, log_dir, model_name, env, policy_kwargs):
             verbose=1,
             tensorboard_log=log_dir,
             learning_rate=2.5e-4,
-            n_steps=128,
+            n_steps=512,
             batch_size=64,
             n_epochs=4,
             clip_range=0.1,

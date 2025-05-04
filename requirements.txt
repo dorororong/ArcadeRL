@@ -8,3 +8,21 @@ matplotlib
 pydirectinput
 pyautogui
 torch
+
+
+# ─── Reinforcement‑Learning core ───────────────────────────────────────────────
+stable-baselines3==2.3.0      # PPO, Dummy/VecEnv 등
+torch==2.2.2                  # CPU 빌드; GPU 있으면 torch==2.2.2+cuXXX 로 교체
+torchvision==0.17.2           # SB3 CNN 정책에 권장 (버전은 torch와 맞춰야 함)
+
+# ─── Environment & Game‑capture 스택 ───────────────────────────────────────────
+gymnasium==0.29.1             # 최신 SB3 호환
+dxcam==0.0.9                  # DirectX 기반 초고속 화면 캡처 (Windows 전용)
+pydirectinput==1.2.6          # 키 입력 시뮬레이션
+opencv-python==4.10.0.0       # cv2 – 이미지 리사이즈·그레이스케일 변환용
+
+# ───utils ───────────────────────────────────────────────────────────
+numpy==1.26.4
+Pillow==10.3.0           # For image display with Tkinter
+pyautogui==0.9.54        # For mouse/screen automation
+
