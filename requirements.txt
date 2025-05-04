@@ -17,7 +17,7 @@ torchvision==0.17.2           # SB3 CNN 정책에 권장 (버전은 torch와 맞
 
 # ─── Environment & Game‑capture 스택 ───────────────────────────────────────────
 gymnasium==0.29.1             # 최신 SB3 호환
-dxcam==0.0.9                  # DirectX 기반 초고속 화면 캡처 (Windows 전용)
+dxcam                # DirectX 기반 초고속 화면 캡처 (Windows 전용)
 pydirectinput==1.2.6          # 키 입력 시뮬레이션
 opencv-python==4.10.0.0       # cv2 – 이미지 리사이즈·그레이스케일 변환용
 
