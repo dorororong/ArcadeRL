@@ -24,15 +24,16 @@ class Env(GymEnv):
 
     def __init__(
         self,
-        game_name: str = "falling_duck",
-        jump_key: str = "a",
+        game_name: str = "jumping_ball",
+        jump_key: str = "space",
         fps: float = 10,
         config_dir: str = "train_main",
         end_check_every: int = 1,
-        json_file: str = "falling_duck_online",
-        debug: bool = False,              # 디버깅 모드 플래그
-        save_debug_frames: bool = False, # 프레임 저장 플래그
+        json_file: str = "jumping_ball_online",
+        debug: bool = True,              # 디버깅 모드 플래그
+        save_debug_frames: bool = True, # 프레임 저장 플래그
         debug_dir: str = "debug_frames", # 저장 폴더
+        initial_page_refresh = False
     ):
         super().__init__()
         # 설정 로드
@@ -55,7 +56,10 @@ class Env(GymEnv):
         self.pixel_w = gr["pixel_width"]
         self.pixel_h = gr["pixel_height"]
         self.observation_space = Box(0, 255, (1, self.pixel_h, self.pixel_w), np.uint8)
+
+        # 액션 및 보상 기록
         self.action_record = []
+        self.eps_reward = 0.0
 
         # DXCam 초기화
         self._cam = dxcam.create(output_idx=0, output_color="BGR")
@@ -77,7 +81,9 @@ class Env(GymEnv):
         self.np_random, _ = seeding.np_random(None)
 
         # 환경 설정시 페이지 리셋 
-        self.page_reset()
+        if initial_page_refresh:
+            print("Initial reset...")
+            self.page_refresh()
 
     def _grab_rois(self):
         """한 번의 grab 으로 game/end ROI 를 동시에 리턴."""
@@ -95,10 +101,18 @@ class Env(GymEnv):
         """게임 프레임→관측값 (1,h,w) 반환."""
         if roi_game is None:
             return np.zeros((1, self.pixel_h, self.pixel_w), np.uint8)
-        gray = roi_game[:, :, 0]
-        if gray.shape != (self.pixel_h, self.pixel_w):
+        # 프레임을 그레이 스케일로 변환환
+        gray = cv2.cvtColor(roi_game, cv2.COLOR_BGR2GRAY)
+        if gray.shape != (self.pixel_h, self.pixel_w): 
             gray = cv2.resize(gray, (self.pixel_w, self.pixel_h),
                               interpolation=cv2.INTER_NEAREST)
+            
+        # 디버깅용 프레임 저장
+        if self.debug and self.save_debug:
+            self._frame_count += 1
+            cv2.imwrite(os.path.join(self._debug_dir, f"frame_{self._frame_count:04d}.png"), gray)
+            cv2.imshow("Game Frame", gray)
+            cv2.waitKey(1)
         return gray[np.newaxis, ...]
 
     def _process_end(self, roi_end):
@@ -110,19 +124,21 @@ class Env(GymEnv):
 
     def step(self, action: int):
         start = time.perf_counter()
-        # 1) 입력
+
         if action == 1:
             pydirectinput.press(self.jump_key)
 
-        # 2) 한 번만 grab → 두 ROI 분리
-        roi_game, roi_end = self._grab_rois()
+        # # 2) 한 번만 grab → 두 ROI 분리
+        roi_game, roi_end = self._grab_rois() 
 
         # 3) 관측 & 종료판정 & 보상
         obs   = self._process_game(roi_game)
-        done = self._process_end(roi_end)
+        done = self._process_end(roi_end) 
 
-        reward = -10.0 if done else 1.0
 
+
+        reward = -1.0 if done else 0.1
+        self.eps_reward += reward
         self.action_record.append(action)
 
         # 4) FPS 캡
@@ -135,27 +151,29 @@ class Env(GymEnv):
 
         # ─── 1시간 경과 시 페이지 리셋 ───────────────────────────
         now = time.time()
-        if now - self._last_page_reset >= 3600:
+        if now - self._last_page_reset >= 2000:
             print("1시간 경과, 페이지 새로고침 실행")
-            self.page_reset()
+            self.page_refresh()
             self._last_page_reset = now
 
         if done:
-            print("action record:", self.action_record)
+            print("action record:", self.action_record, f"eps_reward: {self.eps_reward:.2f}")
 
         return obs, reward, done, False, {}
 
     def reset(self, *, seed=None, options=None):
         print("Reset the environment...")
-        time.sleep(2)
+        time.sleep(2.5)
         super().reset(seed=seed)
         self.action_record = []
+        self.eps_reward = 0.0
         self.np_random, _ = seeding.np_random(seed)
         self._frame_count = 0
         # 클릭으로 재시작
         l, t, r, b = self._game_rect
         cx, cy = (l + r)//2, (t + b)//2
         pydirectinput.click(x=cx, y=cy)
+        time.sleep(0.1)
         # 초기 관측
         roi_game, _ = self._grab_rois()
         obs = self._process_game(roi_game)
@@ -176,7 +194,7 @@ class Env(GymEnv):
             pass
         cv2.destroyAllWindows()
 
-    def page_reset(self):
+    def page_refresh(self):
         """게임 페이지를 리셋합니다."""
         l, t, r, b = self._game_rect
         cx, cy = (l + r)//2, (t + b)//2
@@ -192,15 +210,14 @@ if __name__ == "__main__":
     env = None
     try:
         env = Env(
-            fps=4,
+            fps=7,
             debug=True,
             save_debug_frames=True,
             debug_dir="debug_frames"
         )
         obs, _ = env.reset()
 
-        episodes = 20  # 테스트할 에피소드 수
-        env.reset()
+        episodes = 5  # 테스트할 에피소드 수
         for ep in range(episodes):
             action_record =[]
             start_time = time.time()  # 에피소드 시작 시간 기록
@@ -211,7 +228,9 @@ if __name__ == "__main__":
             print(f"Starting Episode {ep + 1}...")
             while not done:
                 action = env.action_space.sample()
-                obs, reward, done, _, _ = env.step(action)
+                obs, reward, done, aa, bb = env.step(action)
+                print(f"Step {step_count + 1}: Action: {action}, Reward: {reward}")
+                print(f"Observation shape: {obs.shape}")
                 step_count += 1
                 total_reward += reward
                 action_record.append(action)
@@ -225,13 +244,14 @@ if __name__ == "__main__":
             print(f"  Steps: {step_count}")
             print(f"  Elapsed time: {elapsed_time:.2f} seconds")
             print(f"  FPS: {fps:.2f}")
+            print(f"  Action record: {env.action_record}")
+            print(f" eps_reward: {env.eps_reward:.2f}")
 
             # 에피소드 종료 후 환경 초기화
-            obs, _ = env.reset()
-
-
-
-
+            obs, cc = env.reset()
+            print("Environment reset for next episode.")
+            print("reset obs:", obs.shape)  
+            print("reset cc:", cc)
 
     except Exception as e:
         print("Error:", e)

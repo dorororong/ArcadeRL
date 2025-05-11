@@ -3,6 +3,7 @@
 import os
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
+from stable_baselines3.common.monitor import Monitor
 
 
 class TrainAndLoggingCallback(BaseCallback):
@@ -36,11 +37,12 @@ def create_or_load_model(model_dir, log_dir, model_name, env, policy_kwargs):
             env,
             verbose=1,
             tensorboard_log=log_dir,
-            learning_rate=2.5e-4,
+            learning_rate=6e-4,
             n_steps=512,
-            batch_size=64,
-            n_epochs=4,
-            clip_range=0.1,
+            batch_size=256,
+            n_epochs=3,
+            ent_coef=0.005,
+            clip_range=0.2,
             gamma=0.99,
             gae_lambda=0.95,
             policy_kwargs=policy_kwargs,
