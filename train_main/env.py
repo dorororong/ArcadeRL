@@ -62,7 +62,7 @@ class Env(GymEnv):
         self.eps_reward = 0.0
 
         # DXCam 초기화
-        self._cam = dxcam.create(output_idx=0, output_color="BGR")
+        self._cam = dxcam.create(output_idx=0, output_color="GRAY")
         if self._cam is None:
             raise RuntimeError("dxcam.create returned None")
 
@@ -80,6 +80,18 @@ class Env(GymEnv):
         self._frame_count = 0
         self.np_random, _ = seeding.np_random(None)
 
+
+        # 1) game, end 두 사각형을 한 번에 덮는 공통 bbox
+        gx1, gy1, gx2, gy2 = self._game_rect          # (l,t,r,b)
+        ex1, ey1, ex2, ey2 = self._end_rect
+        bx1, by1 = min(gx1, ex1), min(gy1, ey1)
+        bx2, by2 = max(gx2, ex2), max(gy2, ey2)
+        self._bbox = (bx1, by1, bx2, by2)              # <- grab(region=...)
+
+        # 2) bbox 내부에서 game/end 의 상대 좌표 계산
+        self._rel_game = (gx1-bx1, gy1-by1, gx2-bx1, gy2-by1)
+        self._rel_end  = (ex1-bx1, ey1-by1, ex2-bx1, ey2-by1)
+
         # 환경 설정시 페이지 리셋 
         if initial_page_refresh:
             print("Initial reset...")
@@ -87,12 +99,12 @@ class Env(GymEnv):
 
     def _grab_rois(self):
         """한 번의 grab 으로 game/end ROI 를 동시에 리턴."""
-        full = self._cam.grab()
+        full = self._cam.grab(region=self._bbox) 
         if full is None:
             return None, None
         # unpack
-        lg, tg, rg, bg = self._game_rect
-        le, te, re, be = self._end_rect
+        lg,tg,rg,bg = self._rel_game
+        le,te,re,be = self._rel_end
         roi_game = full[tg:bg, lg:rg]
         roi_end  = full[te:be, le:re]
         return roi_game, roi_end
@@ -101,8 +113,7 @@ class Env(GymEnv):
         """게임 프레임→관측값 (1,h,w) 반환."""
         if roi_game is None:
             return np.zeros((1, self.pixel_h, self.pixel_w), np.uint8)
-        # 프레임을 그레이 스케일로 변환환
-        gray = cv2.cvtColor(roi_game, cv2.COLOR_BGR2GRAY)
+        gray = roi_game 
         if gray.shape != (self.pixel_h, self.pixel_w): 
             gray = cv2.resize(gray, (self.pixel_w, self.pixel_h),
                               interpolation=cv2.INTER_NEAREST)
@@ -163,7 +174,7 @@ class Env(GymEnv):
 
     def reset(self, *, seed=None, options=None):
         print("Reset the environment...")
-        time.sleep(2.5)
+        time.sleep(1)
         super().reset(seed=seed)
         self.action_record = []
         self.eps_reward = 0.0
