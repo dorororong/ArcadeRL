@@ -24,7 +24,7 @@ def test(env_id, policy, episodes: int, render: bool, device):
     """
     # 렌더 모드 지정
     render_mode = "human" if render else None
-    env = gym.make(env_id, render_mode=render_mode)
+    env = gym.make("MountainCar-v0", render_mode=render_mode)
     returns = []
     for ep in range(1, episodes+1):
         obs, _ = env.reset(seed=ep)
