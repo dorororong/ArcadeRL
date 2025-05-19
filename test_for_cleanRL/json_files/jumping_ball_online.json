@@ -1,0 +1,28 @@
+{
+  "regions": {
+    "game": {
+      "left": 104,
+      "top": 462,
+      "width": 338,
+      "height": 116,
+      "pixel_width": 64,
+      "pixel_height": 32
+    },
+    "end": {
+      "left": 359,
+      "top": 450,
+      "width": 5,
+      "height": 9,
+      "pixel_width": 1,
+      "pixel_height": 1
+    },
+    "page_refresh": {
+      "left": 369,
+      "top": 878,
+      "width": 59,
+      "height": 50,
+      "pixel_width": 1,
+      "pixel_height": 1
+    }
+  }
+}

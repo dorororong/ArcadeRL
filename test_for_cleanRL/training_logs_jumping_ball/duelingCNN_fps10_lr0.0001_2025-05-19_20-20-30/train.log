@@ -1,0 +1,109 @@
+2025-05-19 20:20:30,806 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-20-30
+2025-05-19 20:20:30,807 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=100000, num_episodes=10000, lr=0.0001, buffer_size=30000, gamma=0.99, batch_size=64, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=10000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=64, clip_grad_norm=10.0, env_fps=10, env_debug=False, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-19 20:20:30,807 - INFO - Using device: cpu
+2025-05-19 20:20:30,912 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-19 20:20:30,912 - INFO - Action space: Discrete(2)
+2025-05-19 20:20:35,264 - INFO -   Global Steps: 19  Episode Return: 0.80  Epsilon: 0.998
+2025-05-19 20:20:35,264 - INFO -   Action Record: [1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1]
+2025-05-19 20:20:40,402 - INFO -   Global Steps: 58  Episode Return: 2.80  Epsilon: 0.994
+2025-05-19 20:20:40,402 - INFO -   Action Record: [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+2025-05-19 20:20:42,273 - INFO - Training Update - GlobalStep: 64, Loss: 0.0584
+2025-05-19 20:20:42,704 - INFO - Training Update - GlobalStep: 68, Loss: 0.0320
+2025-05-19 20:20:43,134 - INFO - Training Update - GlobalStep: 72, Loss: 0.0276
+2025-05-19 20:20:43,336 - INFO -   Global Steps: 74  Episode Return: 0.50  Epsilon: 0.993
+2025-05-19 20:20:43,337 - INFO -   Action Record: [0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1]
+2025-05-19 20:20:44,855 - INFO - Training Update - GlobalStep: 76, Loss: 0.0349
+2025-05-19 20:20:45,287 - INFO - Training Update - GlobalStep: 80, Loss: 0.0262
+2025-05-19 20:20:45,721 - INFO - Training Update - GlobalStep: 84, Loss: 0.0208
+2025-05-19 20:20:46,152 - INFO - Training Update - GlobalStep: 88, Loss: 0.0239
+2025-05-19 20:20:46,354 - INFO -   Global Steps: 90  Episode Return: 0.50  Epsilon: 0.991
+2025-05-19 20:20:46,354 - INFO -   Action Record: [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0]
+2025-05-19 20:20:47,800 - INFO - Training Update - GlobalStep: 92, Loss: 0.0237
+2025-05-19 20:20:48,230 - INFO - Training Update - GlobalStep: 96, Loss: 0.0271
+2025-05-19 20:20:48,660 - INFO - Training Update - GlobalStep: 100, Loss: 0.0306
+2025-05-19 20:20:49,091 - INFO - Training Update - GlobalStep: 104, Loss: 0.0269
+2025-05-19 20:20:49,293 - INFO -   Global Steps: 106  Episode Return: 0.50  Epsilon: 0.990
+2025-05-19 20:20:49,293 - INFO -   Action Record: [1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0]
+2025-05-19 20:20:50,738 - INFO - Training Update - GlobalStep: 108, Loss: 0.0347
+2025-05-19 20:20:51,170 - INFO - Training Update - GlobalStep: 112, Loss: 0.0321
+2025-05-19 20:20:51,600 - INFO - Training Update - GlobalStep: 116, Loss: 0.0272
+2025-05-19 20:20:52,032 - INFO - Training Update - GlobalStep: 120, Loss: 0.0310
+2025-05-19 20:20:52,462 - INFO - Training Update - GlobalStep: 124, Loss: 0.0345
+2025-05-19 20:20:52,895 - INFO - Training Update - GlobalStep: 128, Loss: 0.0351
+2025-05-19 20:20:53,327 - INFO - Training Update - GlobalStep: 132, Loss: 0.0187
+2025-05-19 20:20:53,758 - INFO - Training Update - GlobalStep: 136, Loss: 0.0194
+2025-05-19 20:20:54,191 - INFO - Training Update - GlobalStep: 140, Loss: 0.0267
+2025-05-19 20:20:54,291 - INFO -   Global Steps: 141  Episode Return: 2.40  Epsilon: 0.986
+2025-05-19 20:20:54,291 - INFO -   Action Record: [0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1]
+2025-05-19 20:20:55,833 - INFO - Training Update - GlobalStep: 144, Loss: 0.0286
+2025-05-19 20:20:56,262 - INFO - Training Update - GlobalStep: 148, Loss: 0.0191
+2025-05-19 20:20:56,693 - INFO - Training Update - GlobalStep: 152, Loss: 0.0277
+2025-05-19 20:20:57,126 - INFO - Training Update - GlobalStep: 156, Loss: 0.0272
+2025-05-19 20:20:57,428 - INFO -   Global Steps: 159  Episode Return: 0.70  Epsilon: 0.984
+2025-05-19 20:20:57,429 - INFO -   Action Record: [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1]
+2025-05-19 20:20:58,772 - INFO - Training Update - GlobalStep: 160, Loss: 0.0376
+2025-05-19 20:20:59,203 - INFO - Training Update - GlobalStep: 164, Loss: 0.0301
+2025-05-19 20:20:59,632 - INFO - Training Update - GlobalStep: 168, Loss: 0.0142
+2025-05-19 20:21:00,062 - INFO - Training Update - GlobalStep: 172, Loss: 0.0363
+2025-05-19 20:21:00,264 - INFO -   Global Steps: 174  Episode Return: 0.40  Epsilon: 0.983
+2025-05-19 20:21:00,264 - INFO -   Action Record: [0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0]
+2025-05-19 20:21:01,713 - INFO - Training Update - GlobalStep: 176, Loss: 0.0453
+2025-05-19 20:21:02,143 - INFO - Training Update - GlobalStep: 180, Loss: 0.0258
+2025-05-19 20:21:02,573 - INFO - Training Update - GlobalStep: 184, Loss: 0.0258
+2025-05-19 20:21:03,004 - INFO - Training Update - GlobalStep: 188, Loss: 0.0227
+2025-05-19 20:21:03,307 - INFO -   Global Steps: 191  Episode Return: 0.60  Epsilon: 0.981
+2025-05-19 20:21:03,307 - INFO -   Action Record: [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1]
+2025-05-19 20:21:04,653 - INFO - Training Update - GlobalStep: 192, Loss: 0.0343
+2025-05-19 20:21:05,088 - INFO - Training Update - GlobalStep: 196, Loss: 0.0211
+2025-05-19 20:21:05,518 - INFO - Training Update - GlobalStep: 200, Loss: 0.0302
+2025-05-19 20:21:05,955 - INFO - Training Update - GlobalStep: 204, Loss: 0.0415
+2025-05-19 20:21:06,391 - INFO - Training Update - GlobalStep: 208, Loss: 0.0216
+2025-05-19 20:21:06,827 - INFO - Training Update - GlobalStep: 212, Loss: 0.0360
+2025-05-19 20:21:07,129 - INFO -   Global Steps: 215  Episode Return: 1.30  Epsilon: 0.979
+2025-05-19 20:21:07,129 - INFO -   Action Record: [0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1]
+2025-05-19 20:21:08,486 - INFO - Training Update - GlobalStep: 216, Loss: 0.0388
+2025-05-19 20:21:08,936 - INFO - Training Update - GlobalStep: 220, Loss: 0.0523
+2025-05-19 20:21:09,372 - INFO - Training Update - GlobalStep: 224, Loss: 0.0309
+2025-05-19 20:21:09,805 - INFO - Training Update - GlobalStep: 228, Loss: 0.0467
+2025-05-19 20:21:10,109 - INFO -   Global Steps: 231  Episode Return: 0.50  Epsilon: 0.977
+2025-05-19 20:21:10,110 - INFO -   Action Record: [0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0]
+2025-05-19 20:21:11,466 - INFO - Training Update - GlobalStep: 232, Loss: 0.0544
+2025-05-19 20:21:11,931 - INFO - Training Update - GlobalStep: 236, Loss: 0.0342
+2025-05-19 20:21:12,365 - INFO - Training Update - GlobalStep: 240, Loss: 0.0315
+2025-05-19 20:21:12,807 - INFO - Training Update - GlobalStep: 244, Loss: 0.0333
+2025-05-19 20:21:13,243 - INFO - Training Update - GlobalStep: 248, Loss: 0.0415
+2025-05-19 20:21:13,679 - INFO - Training Update - GlobalStep: 252, Loss: 0.0427
+2025-05-19 20:21:14,110 - INFO - Training Update - GlobalStep: 256, Loss: 0.0424
+2025-05-19 20:21:14,211 - INFO -   Global Steps: 257  Episode Return: 1.50  Epsilon: 0.975
+2025-05-19 20:21:14,211 - INFO -   Action Record: [1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1]
+2025-05-19 20:21:15,759 - INFO - Training Update - GlobalStep: 260, Loss: 0.0497
+2025-05-19 20:21:16,193 - INFO - Training Update - GlobalStep: 264, Loss: 0.0288
+2025-05-19 20:21:16,625 - INFO - Training Update - GlobalStep: 268, Loss: 0.0377
+2025-05-19 20:21:17,062 - INFO - Training Update - GlobalStep: 272, Loss: 0.0307
+2025-05-19 20:21:17,164 - INFO -   Global Steps: 273  Episode Return: 0.50  Epsilon: 0.973
+2025-05-19 20:21:17,164 - INFO -   Action Record: [0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1]
+2025-05-19 20:21:18,731 - INFO - Training Update - GlobalStep: 276, Loss: 0.0253
+2025-05-19 20:21:19,172 - INFO - Training Update - GlobalStep: 280, Loss: 0.0162
+2025-05-19 20:21:19,607 - INFO - Training Update - GlobalStep: 284, Loss: 0.0257
+2025-05-19 20:21:20,041 - INFO - Training Update - GlobalStep: 288, Loss: 0.0237
+2025-05-19 20:21:20,142 - INFO -   Global Steps: 289  Episode Return: 0.50  Epsilon: 0.972
+2025-05-19 20:21:20,142 - INFO -   Action Record: [0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0]
+2025-05-19 20:21:21,693 - INFO - Training Update - GlobalStep: 292, Loss: 0.0196
+2025-05-19 20:21:22,126 - INFO - Training Update - GlobalStep: 296, Loss: 0.0370
+2025-05-19 20:21:22,560 - INFO - Training Update - GlobalStep: 300, Loss: 0.0280
+2025-05-19 20:21:22,992 - INFO - Training Update - GlobalStep: 304, Loss: 0.0272
+2025-05-19 20:21:23,423 - INFO - Training Update - GlobalStep: 308, Loss: 0.0300
+2025-05-19 20:21:23,856 - INFO - Training Update - GlobalStep: 312, Loss: 0.0350
+2025-05-19 20:21:24,160 - INFO -   Global Steps: 315  Episode Return: 1.50  Epsilon: 0.969
+2025-05-19 20:21:24,161 - INFO -   Action Record: [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1]
+2025-05-19 20:21:25,515 - INFO - Training Update - GlobalStep: 316, Loss: 0.0123
+2025-05-19 20:21:25,962 - INFO - Training Update - GlobalStep: 320, Loss: 0.0340
+2025-05-19 20:21:26,399 - INFO - Training Update - GlobalStep: 324, Loss: 0.0345
+2025-05-19 20:21:26,842 - INFO - Training Update - GlobalStep: 328, Loss: 0.0218
+2025-05-19 20:21:27,283 - INFO - Training Update - GlobalStep: 332, Loss: 0.0315
+2025-05-19 20:21:27,283 - INFO -   Global Steps: 332  Episode Return: 0.60  Epsilon: 0.968
+2025-05-19 20:21:27,283 - INFO -   Action Record: [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0]
+2025-05-19 20:21:27,858 - WARNING - Training interrupted by user.
+2025-05-19 20:21:27,863 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-20-30\dueling_cnn_final.pt
+2025-05-19 20:21:27,873 - INFO - Total training time: 0.02 hours.
+2025-05-19 20:21:27,873 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-20-30

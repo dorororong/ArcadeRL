@@ -1,0 +1,9 @@
+2025-05-19 20:52:38,347 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-52-38
+2025-05-19 20:52:38,347 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=100000, num_episodes=10000, lr=0.0001, buffer_size=30000, gamma=0.99, batch_size=64, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=10000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=64, clip_grad_norm=10.0, env_fps=10, env_debug=False, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-19 20:52:38,347 - INFO - Using device: cpu
+2025-05-19 20:52:38,451 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-19 20:52:38,451 - INFO - Action space: Discrete(2)
+2025-05-19 20:52:42,648 - ERROR - An error occurred during training: cannot access local variable 'loss' where it is not associated with a value
+2025-05-19 20:52:42,658 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-52-38\dueling_cnn_final.pt
+2025-05-19 20:52:42,669 - INFO - Total training time: 0.00 hours.
+2025-05-19 20:52:42,670 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-52-38

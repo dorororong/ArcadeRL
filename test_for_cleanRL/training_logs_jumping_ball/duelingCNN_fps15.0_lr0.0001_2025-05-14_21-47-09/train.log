@@ -1,0 +1,4 @@
+2025-05-14 21:47:09,351 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps15.0_lr0.0001_2025-05-14_21-47-09
+2025-05-14 21:47:09,351 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=200000, num_episodes=10000, lr=0.0001, buffer_size=100000, gamma=0.99, batch_size=32, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=200000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=256, clip_grad_norm=10.0, env_fps=15.0, env_debug=True, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-14 21:47:09,351 - INFO - Using device: cpu
+2025-05-14 21:47:09,351 - ERROR - Failed to initialize environment: Configuration file not found: train_main\jumping_ball_online.json. Please ensure it's in the 'train_main' directory.

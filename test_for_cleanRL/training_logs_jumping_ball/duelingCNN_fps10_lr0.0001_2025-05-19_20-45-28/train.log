@@ -1,0 +1,182 @@
+2025-05-19 20:45:28,175 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-45-28
+2025-05-19 20:45:28,175 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=100000, num_episodes=10000, lr=0.0001, buffer_size=30000, gamma=0.99, batch_size=64, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=10000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=64, clip_grad_norm=10.0, env_fps=10, env_debug=False, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-19 20:45:28,176 - INFO - Using device: cpu
+2025-05-19 20:45:28,282 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-19 20:45:28,282 - INFO - Action space: Discrete(2)
+2025-05-19 20:45:32,647 - INFO -   Global Steps: 19  Episode Return: 0.80  Epsilon: 0.998
+2025-05-19 20:45:32,647 - INFO -   Action Record: [0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0]
+2025-05-19 20:45:35,686 - INFO -   Global Steps: 37  Episode Return: 0.70  Epsilon: 0.996
+2025-05-19 20:45:35,689 - INFO -   Action Record: [1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0]
+2025-05-19 20:45:38,617 - INFO -   Global Steps: 54  Episode Return: 0.60  Epsilon: 0.995
+2025-05-19 20:45:38,620 - INFO -   Action Record: [0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1]
+2025-05-19 20:45:42,727 - INFO -   Global Steps: 81  Episode Return: 1.60  Epsilon: 0.992
+2025-05-19 20:45:42,727 - INFO -   Action Record: [1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0]
+2025-05-19 20:45:47,006 - INFO -   Global Steps: 109  Episode Return: 1.70  Epsilon: 0.989
+2025-05-19 20:45:47,006 - INFO -   Action Record: [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0]
+2025-05-19 20:45:51,084 - INFO -   Global Steps: 135  Episode Return: 1.50  Epsilon: 0.987
+2025-05-19 20:45:51,085 - INFO -   Action Record: [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0]
+2025-05-19 20:45:55,146 - INFO -   Global Steps: 161  Episode Return: 1.50  Epsilon: 0.984
+2025-05-19 20:45:55,146 - INFO -   Action Record: [1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0]
+2025-05-19 20:45:58,220 - INFO -   Global Steps: 178  Episode Return: 0.60  Epsilon: 0.983
+2025-05-19 20:45:58,220 - INFO -   Action Record: [1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1]
+2025-05-19 20:46:01,171 - INFO -   Global Steps: 194  Episode Return: 0.50  Epsilon: 0.981
+2025-05-19 20:46:01,171 - INFO -   Action Record: [0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1]
+2025-05-19 20:46:06,224 - INFO -   Global Steps: 229  Episode Return: 2.40  Epsilon: 0.978
+2025-05-19 20:46:06,224 - INFO -   Action Record: [1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1]
+2025-05-19 20:46:09,400 - INFO -   Global Steps: 247  Episode Return: 0.70  Epsilon: 0.976
+2025-05-19 20:46:09,401 - INFO -   Action Record: [1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+2025-05-19 20:46:12,380 - INFO -   Global Steps: 263  Episode Return: 0.50  Epsilon: 0.974
+2025-05-19 20:46:12,381 - INFO -   Action Record: [1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0]
+2025-05-19 20:46:16,450 - INFO -   Global Steps: 289  Episode Return: 1.50  Epsilon: 0.972
+2025-05-19 20:46:16,450 - INFO -   Action Record: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1]
+2025-05-19 20:46:19,404 - INFO -   Global Steps: 305  Episode Return: 0.50  Epsilon: 0.970
+2025-05-19 20:46:19,404 - INFO -   Action Record: [1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0]
+2025-05-19 20:46:25,504 - INFO -   Global Steps: 350  Episode Return: 3.40  Epsilon: 0.966
+2025-05-19 20:46:25,505 - INFO -   Action Record: [1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1]
+2025-05-19 20:46:28,348 - INFO -   Global Steps: 365  Episode Return: 0.40  Epsilon: 0.965
+2025-05-19 20:46:28,348 - INFO -   Action Record: [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1]
+2025-05-19 20:46:31,304 - INFO -   Global Steps: 381  Episode Return: 0.50  Epsilon: 0.963
+2025-05-19 20:46:31,304 - INFO -   Action Record: [1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1]
+2025-05-19 20:46:34,371 - INFO -   Global Steps: 398  Episode Return: 0.60  Epsilon: 0.961
+2025-05-19 20:46:34,371 - INFO -   Action Record: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+2025-05-19 20:46:37,324 - INFO -   Global Steps: 414  Episode Return: 0.50  Epsilon: 0.960
+2025-05-19 20:46:37,324 - INFO -   Action Record: [0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1]
+2025-05-19 20:46:40,410 - INFO -   Global Steps: 431  Episode Return: 0.60  Epsilon: 0.958
+2025-05-19 20:46:40,411 - INFO -   Action Record: [0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0]
+2025-05-19 20:46:43,380 - INFO -   Global Steps: 447  Episode Return: 0.50  Epsilon: 0.957
+2025-05-19 20:46:43,380 - INFO -   Action Record: [1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1]
+2025-05-19 20:46:46,581 - INFO -   Global Steps: 465  Episode Return: 0.70  Epsilon: 0.955
+2025-05-19 20:46:46,581 - INFO -   Action Record: [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0]
+2025-05-19 20:46:49,446 - INFO -   Global Steps: 480  Episode Return: 0.40  Epsilon: 0.954
+2025-05-19 20:46:49,447 - INFO -   Action Record: [0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
+2025-05-19 20:46:52,512 - INFO -   Global Steps: 497  Episode Return: 0.60  Epsilon: 0.952
+2025-05-19 20:46:52,512 - INFO -   Action Record: [0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1]
+2025-05-19 20:46:55,667 - INFO -   Global Steps: 515  Episode Return: 0.70  Epsilon: 0.950
+2025-05-19 20:46:55,668 - INFO -   Action Record: [0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1]
+2025-05-19 20:46:58,765 - INFO -   Global Steps: 532  Episode Return: 0.60  Epsilon: 0.949
+2025-05-19 20:46:58,765 - INFO -   Action Record: [1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0]
+2025-05-19 20:47:01,768 - INFO -   Global Steps: 548  Episode Return: 0.50  Epsilon: 0.947
+2025-05-19 20:47:01,769 - INFO -   Action Record: [1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0]
+2025-05-19 20:47:04,871 - INFO -   Global Steps: 565  Episode Return: 0.60  Epsilon: 0.946
+2025-05-19 20:47:04,871 - INFO -   Action Record: [0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1]
+2025-05-19 20:47:07,874 - INFO -   Global Steps: 581  Episode Return: 0.50  Epsilon: 0.944
+2025-05-19 20:47:07,874 - INFO -   Action Record: [1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1]
+2025-05-19 20:47:12,914 - INFO -   Global Steps: 616  Episode Return: 2.40  Epsilon: 0.941
+2025-05-19 20:47:12,915 - INFO -   Action Record: [1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0]
+2025-05-19 20:47:15,766 - INFO -   Global Steps: 631  Episode Return: 0.40  Epsilon: 0.940
+2025-05-19 20:47:15,768 - INFO -   Action Record: [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+2025-05-19 20:47:18,744 - INFO -   Global Steps: 647  Episode Return: 0.50  Epsilon: 0.938
+2025-05-19 20:47:18,745 - INFO -   Action Record: [1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0]
+2025-05-19 20:47:21,715 - INFO -   Global Steps: 663  Episode Return: 0.50  Epsilon: 0.937
+2025-05-19 20:47:21,716 - INFO -   Action Record: [0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1]
+2025-05-19 20:47:24,680 - INFO -   Global Steps: 679  Episode Return: 0.50  Epsilon: 0.935
+2025-05-19 20:47:24,681 - INFO -   Action Record: [0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0]
+2025-05-19 20:47:29,697 - INFO -   Global Steps: 713  Episode Return: 2.30  Epsilon: 0.932
+2025-05-19 20:47:29,697 - INFO -   Action Record: [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1]
+2025-05-19 20:47:32,663 - INFO -   Global Steps: 729  Episode Return: 0.50  Epsilon: 0.930
+2025-05-19 20:47:32,663 - INFO -   Action Record: [1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0]
+2025-05-19 20:47:35,628 - INFO -   Global Steps: 745  Episode Return: 0.50  Epsilon: 0.929
+2025-05-19 20:47:35,628 - INFO -   Action Record: [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1]
+2025-05-19 20:47:38,609 - INFO -   Global Steps: 761  Episode Return: 0.50  Epsilon: 0.928
+2025-05-19 20:47:38,609 - INFO -   Action Record: [0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0]
+2025-05-19 20:47:41,486 - INFO -   Global Steps: 776  Episode Return: 0.40  Epsilon: 0.926
+2025-05-19 20:47:41,486 - INFO -   Action Record: [1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0]
+2025-05-19 20:47:44,536 - INFO -   Global Steps: 793  Episode Return: 0.60  Epsilon: 0.925
+2025-05-19 20:47:44,536 - INFO -   Action Record: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1]
+2025-05-19 20:47:47,492 - INFO -   Global Steps: 809  Episode Return: 0.50  Epsilon: 0.923
+2025-05-19 20:47:47,492 - INFO -   Action Record: [0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1]
+2025-05-19 20:47:50,558 - INFO -   Global Steps: 826  Episode Return: 0.60  Epsilon: 0.922
+2025-05-19 20:47:50,558 - INFO -   Action Record: [0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1]
+2025-05-19 20:47:53,414 - INFO -   Global Steps: 841  Episode Return: 0.40  Epsilon: 0.920
+2025-05-19 20:47:53,414 - INFO -   Action Record: [1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1]
+2025-05-19 20:47:58,562 - INFO -   Global Steps: 877  Episode Return: 2.50  Epsilon: 0.917
+2025-05-19 20:47:58,562 - INFO -   Action Record: [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0]
+2025-05-19 20:48:01,530 - INFO -   Global Steps: 893  Episode Return: 0.50  Epsilon: 0.916
+2025-05-19 20:48:01,530 - INFO -   Action Record: [1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1]
+2025-05-19 20:48:04,494 - INFO -   Global Steps: 909  Episode Return: 0.50  Epsilon: 0.914
+2025-05-19 20:48:04,494 - INFO -   Action Record: [0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+2025-05-19 20:48:07,447 - INFO -   Global Steps: 925  Episode Return: 0.50  Epsilon: 0.913
+2025-05-19 20:48:07,447 - INFO -   Action Record: [1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1]
+2025-05-19 20:48:10,406 - INFO -   Global Steps: 941  Episode Return: 0.50  Epsilon: 0.911
+2025-05-19 20:48:10,406 - INFO -   Action Record: [0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1]
+2025-05-19 20:48:13,453 - INFO -   Global Steps: 958  Episode Return: 0.60  Epsilon: 0.910
+2025-05-19 20:48:13,453 - INFO -   Action Record: [1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0]
+2025-05-19 20:48:17,614 - INFO -   Global Steps: 985  Episode Return: 1.60  Epsilon: 0.907
+2025-05-19 20:48:17,614 - INFO -   Action Record: [0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0]
+2025-05-19 20:48:17,619 - INFO - Model saved at episode 50 to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-45-28\dueling_cnn_ep50.pt
+2025-05-19 20:48:20,475 - INFO - Training Update - GlobalStep: 1000, Loss: 0.0160
+2025-05-19 20:48:20,476 - INFO - GlobalStep: 1000: Target network updated.
+2025-05-19 20:48:20,577 - INFO -   Global Steps: 1001  Episode Return: 0.50  Epsilon: 0.906
+2025-05-19 20:48:20,577 - INFO -   Action Record: [1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1]
+2025-05-19 20:48:23,636 - INFO -   Global Steps: 1018  Episode Return: 0.60  Epsilon: 0.904
+2025-05-19 20:48:23,636 - INFO -   Action Record: [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0]
+2025-05-19 20:48:26,592 - INFO -   Global Steps: 1034  Episode Return: 0.50  Epsilon: 0.903
+2025-05-19 20:48:26,592 - INFO -   Action Record: [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0]
+2025-05-19 20:48:34,659 - INFO -   Global Steps: 1097  Episode Return: 5.20  Epsilon: 0.897
+2025-05-19 20:48:34,659 - INFO -   Action Record: [1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1]
+2025-05-19 20:48:39,773 - INFO -   Global Steps: 1133  Episode Return: 2.50  Epsilon: 0.894
+2025-05-19 20:48:39,773 - INFO -   Action Record: [0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1]
+2025-05-19 20:48:44,822 - INFO -   Global Steps: 1168  Episode Return: 2.40  Epsilon: 0.891
+2025-05-19 20:48:44,823 - INFO -   Action Record: [0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1]
+2025-05-19 20:48:48,850 - INFO -   Global Steps: 1194  Episode Return: 1.50  Epsilon: 0.889
+2025-05-19 20:48:48,850 - INFO -   Action Record: [0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+2025-05-19 20:48:52,032 - INFO -   Global Steps: 1212  Episode Return: 0.70  Epsilon: 0.887
+2025-05-19 20:48:52,032 - INFO -   Action Record: [0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2025-05-19 20:48:56,296 - INFO -   Global Steps: 1240  Episode Return: 1.70  Epsilon: 0.885
+2025-05-19 20:48:56,296 - INFO -   Action Record: [0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+2025-05-19 20:48:59,295 - INFO -   Global Steps: 1256  Episode Return: 0.50  Epsilon: 0.883
+2025-05-19 20:48:59,295 - INFO -   Action Record: [1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]
+2025-05-19 20:49:02,341 - INFO -   Global Steps: 1273  Episode Return: 0.60  Epsilon: 0.882
+2025-05-19 20:49:02,341 - INFO -   Action Record: [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1]
+2025-05-19 20:49:05,295 - INFO -   Global Steps: 1289  Episode Return: 0.50  Epsilon: 0.880
+2025-05-19 20:49:05,295 - INFO -   Action Record: [1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1]
+2025-05-19 20:49:08,257 - INFO -   Global Steps: 1305  Episode Return: 0.50  Epsilon: 0.879
+2025-05-19 20:49:08,257 - INFO -   Action Record: [1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+2025-05-19 20:49:11,313 - INFO -   Global Steps: 1322  Episode Return: 0.60  Epsilon: 0.877
+2025-05-19 20:49:11,313 - INFO -   Action Record: [0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0]
+2025-05-19 20:49:14,408 - INFO -   Global Steps: 1339  Episode Return: 0.60  Epsilon: 0.876
+2025-05-19 20:49:14,408 - INFO -   Action Record: [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0]
+2025-05-19 20:49:17,380 - INFO -   Global Steps: 1355  Episode Return: 0.50  Epsilon: 0.875
+2025-05-19 20:49:17,381 - INFO -   Action Record: [1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0]
+2025-05-19 20:49:21,446 - INFO -   Global Steps: 1381  Episode Return: 1.50  Epsilon: 0.872
+2025-05-19 20:49:21,446 - INFO -   Action Record: [1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0]
+2025-05-19 20:49:24,411 - INFO -   Global Steps: 1397  Episode Return: 0.50  Epsilon: 0.871
+2025-05-19 20:49:24,411 - INFO -   Action Record: [0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1]
+2025-05-19 20:49:27,491 - INFO -   Global Steps: 1414  Episode Return: 0.60  Epsilon: 0.870
+2025-05-19 20:49:27,491 - INFO -   Action Record: [0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1]
+2025-05-19 20:49:32,525 - INFO -   Global Steps: 1449  Episode Return: 2.40  Epsilon: 0.867
+2025-05-19 20:49:32,525 - INFO -   Action Record: [1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]
+2025-05-19 20:49:35,471 - INFO -   Global Steps: 1465  Episode Return: 0.50  Epsilon: 0.865
+2025-05-19 20:49:35,471 - INFO -   Action Record: [0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1]
+2025-05-19 20:49:38,563 - INFO -   Global Steps: 1482  Episode Return: 0.60  Epsilon: 0.864
+2025-05-19 20:49:38,565 - INFO -   Action Record: [1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1]
+2025-05-19 20:49:41,524 - INFO -   Global Steps: 1498  Episode Return: 0.50  Epsilon: 0.862
+2025-05-19 20:49:41,524 - INFO -   Action Record: [0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1]
+2025-05-19 20:49:44,469 - INFO -   Global Steps: 1514  Episode Return: 0.50  Epsilon: 0.861
+2025-05-19 20:49:44,469 - INFO -   Action Record: [1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0]
+2025-05-19 20:49:47,538 - INFO -   Global Steps: 1531  Episode Return: 0.60  Epsilon: 0.860
+2025-05-19 20:49:47,538 - INFO -   Action Record: [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+2025-05-19 20:49:51,717 - INFO -   Global Steps: 1558  Episode Return: 1.60  Epsilon: 0.857
+2025-05-19 20:49:51,717 - INFO -   Action Record: [0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0]
+2025-05-19 20:49:54,776 - INFO -   Global Steps: 1575  Episode Return: 0.60  Epsilon: 0.856
+2025-05-19 20:49:54,776 - INFO -   Action Record: [0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1]
+2025-05-19 20:49:57,861 - INFO -   Global Steps: 1592  Episode Return: 0.60  Epsilon: 0.854
+2025-05-19 20:49:57,862 - INFO -   Action Record: [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1]
+2025-05-19 20:50:00,920 - INFO -   Global Steps: 1609  Episode Return: 0.60  Epsilon: 0.853
+2025-05-19 20:50:00,920 - INFO -   Action Record: [1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0]
+2025-05-19 20:50:03,871 - INFO -   Global Steps: 1625  Episode Return: 0.50  Epsilon: 0.852
+2025-05-19 20:50:03,871 - INFO -   Action Record: [1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1]
+2025-05-19 20:50:06,723 - INFO -   Global Steps: 1640  Episode Return: 0.40  Epsilon: 0.850
+2025-05-19 20:50:06,723 - INFO -   Action Record: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+2025-05-19 20:50:10,974 - INFO -   Global Steps: 1668  Episode Return: 1.70  Epsilon: 0.848
+2025-05-19 20:50:10,974 - INFO -   Action Record: [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1]
+2025-05-19 20:50:13,916 - INFO -   Global Steps: 1684  Episode Return: 0.50  Epsilon: 0.847
+2025-05-19 20:50:13,916 - INFO -   Action Record: [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0]
+2025-05-19 20:50:17,076 - INFO -   Global Steps: 1702  Episode Return: 0.70  Epsilon: 0.845
+2025-05-19 20:50:17,076 - INFO -   Action Record: [0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1]
+2025-05-19 20:50:21,254 - INFO -   Global Steps: 1729  Episode Return: 1.60  Epsilon: 0.843
+2025-05-19 20:50:21,254 - INFO -   Action Record: [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1]
+2025-05-19 20:50:21,483 - WARNING - Training interrupted by user.
+2025-05-19 20:50:21,485 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-45-28\dueling_cnn_final.pt
+2025-05-19 20:50:21,495 - INFO - Total training time: 0.08 hours.
+2025-05-19 20:50:21,495 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_20-45-28

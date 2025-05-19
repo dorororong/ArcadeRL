@@ -1,0 +1,19 @@
+2025-05-14 22:06:50,874 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_22-06-50
+2025-05-14 22:06:50,874 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=1000000, num_episodes=10000, lr=0.0001, buffer_size=100000, gamma=0.99, batch_size=32, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=200000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=256, clip_grad_norm=10.0, env_fps=10.0, env_debug=True, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-14 22:06:50,874 - INFO - Using device: cpu
+2025-05-14 22:06:51,499 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-14 22:06:51,499 - INFO - Action space: Discrete(2)
+2025-05-14 22:06:54,695 - INFO - --- Episode 1 Finished ---
+2025-05-14 22:06:54,695 - INFO -   Global Steps: 1, Episode Length: 1, Episode Return: -10.00
+2025-05-14 22:06:54,695 - INFO -   Episode Duration: 0.00s, SPS: 473.83
+2025-05-14 22:06:54,695 - INFO -   Epsilon: 1.000
+2025-05-14 22:06:54,697 - INFO -   Action Record: [0]
+2025-05-14 22:06:56,637 - INFO - --- Episode 2 Finished ---
+2025-05-14 22:06:56,637 - INFO -   Global Steps: 2, Episode Length: 1, Episode Return: -1.00
+2025-05-14 22:06:56,637 - INFO -   Episode Duration: 0.11s, SPS: 9.32
+2025-05-14 22:06:56,639 - INFO -   Epsilon: 1.000
+2025-05-14 22:06:56,639 - INFO -   Action Record: [0]
+2025-05-14 22:06:57,502 - WARNING - Training interrupted by user.
+2025-05-14 22:06:57,512 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_22-06-50\dueling_cnn_final.pt
+2025-05-14 22:06:57,618 - INFO - Total training time: 0.00 hours.
+2025-05-14 22:06:57,618 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_22-06-50

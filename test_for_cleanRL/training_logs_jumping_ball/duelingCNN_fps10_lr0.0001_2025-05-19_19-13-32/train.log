@@ -1,0 +1,44 @@
+2025-05-19 19:13:32,663 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-13-32
+2025-05-19 19:13:32,664 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=1000000, num_episodes=10000, lr=0.0001, buffer_size=100000, gamma=0.99, batch_size=32, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=200000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=256, clip_grad_norm=10.0, env_fps=10, env_debug=False, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-19 19:13:32,664 - INFO - Using device: cpu
+2025-05-19 19:13:32,768 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-19 19:13:32,769 - INFO - Action space: Discrete(2)
+2025-05-19 19:13:39,034 - INFO - --- Episode 1 Finished ---
+2025-05-19 19:13:39,034 - INFO -   Global Steps: 37, Episode Length: 37, Episode Return: 2.60
+2025-05-19 19:13:39,035 - INFO -   Episode Duration: 3.83s, SPS: 9.65
+2025-05-19 19:13:39,035 - INFO -   Epsilon: 1.000
+2025-05-19 19:13:39,035 - INFO -   Action Record: [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0]
+2025-05-19 19:13:42,067 - INFO - --- Episode 2 Finished ---
+2025-05-19 19:13:42,068 - INFO -   Global Steps: 54, Episode Length: 17, Episode Return: 0.60
+2025-05-19 19:13:42,068 - INFO -   Episode Duration: 1.81s, SPS: 9.40
+2025-05-19 19:13:42,068 - INFO -   Epsilon: 1.000
+2025-05-19 19:13:42,068 - INFO -   Action Record: [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1]
+2025-05-19 19:13:45,005 - INFO - --- Episode 3 Finished ---
+2025-05-19 19:13:45,008 - INFO -   Global Steps: 70, Episode Length: 16, Episode Return: 0.50
+2025-05-19 19:13:45,008 - INFO -   Episode Duration: 1.72s, SPS: 9.28
+2025-05-19 19:13:45,008 - INFO -   Epsilon: 1.000
+2025-05-19 19:13:45,008 - INFO -   Action Record: [1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1]
+2025-05-19 19:13:47,958 - INFO - --- Episode 4 Finished ---
+2025-05-19 19:13:47,960 - INFO -   Global Steps: 86, Episode Length: 16, Episode Return: 0.50
+2025-05-19 19:13:47,960 - INFO -   Episode Duration: 1.72s, SPS: 9.32
+2025-05-19 19:13:47,960 - INFO -   Epsilon: 1.000
+2025-05-19 19:13:47,960 - INFO -   Action Record: [1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1]
+2025-05-19 19:13:53,019 - INFO - --- Episode 5 Finished ---
+2025-05-19 19:13:53,019 - INFO -   Global Steps: 122, Episode Length: 36, Episode Return: 2.50
+2025-05-19 19:13:53,019 - INFO -   Episode Duration: 3.84s, SPS: 9.37
+2025-05-19 19:13:53,020 - INFO -   Epsilon: 0.999
+2025-05-19 19:13:53,020 - INFO -   Action Record: [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1]
+2025-05-19 19:13:55,962 - INFO - --- Episode 6 Finished ---
+2025-05-19 19:13:55,962 - INFO -   Global Steps: 138, Episode Length: 16, Episode Return: 0.50
+2025-05-19 19:13:55,963 - INFO -   Episode Duration: 1.73s, SPS: 9.25
+2025-05-19 19:13:55,963 - INFO -   Epsilon: 0.999
+2025-05-19 19:13:55,963 - INFO -   Action Record: [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+2025-05-19 19:14:01,134 - INFO - --- Episode 7 Finished ---
+2025-05-19 19:14:01,134 - INFO -   Global Steps: 175, Episode Length: 37, Episode Return: 2.60
+2025-05-19 19:14:01,135 - INFO -   Episode Duration: 3.96s, SPS: 9.36
+2025-05-19 19:14:01,135 - INFO -   Epsilon: 0.999
+2025-05-19 19:14:01,135 - INFO -   Action Record: [0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0]
+2025-05-19 19:14:04,854 - ERROR - An error occurred during training: expected 4D input (got 3D input)
+2025-05-19 19:14:04,860 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-13-32\dueling_cnn_final.pt
+2025-05-19 19:14:04,871 - INFO - Total training time: 0.01 hours.
+2025-05-19 19:14:04,871 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-13-32

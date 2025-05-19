@@ -1,0 +1,19 @@
+2025-05-19 19:05:52,707 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-05-52
+2025-05-19 19:05:52,707 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=1000000, num_episodes=10000, lr=0.0001, buffer_size=100000, gamma=0.99, batch_size=32, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=200000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=256, clip_grad_norm=10.0, env_fps=10, env_debug=False, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-19 19:05:52,707 - INFO - Using device: cpu
+2025-05-19 19:05:52,811 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-19 19:05:52,812 - INFO - Action space: Discrete(2)
+2025-05-19 19:05:55,717 - INFO - --- Episode 1 Finished ---
+2025-05-19 19:05:55,717 - INFO -   Global Steps: 1, Episode Length: 1, Episode Return: -1.00
+2025-05-19 19:05:55,718 - INFO -   Episode Duration: 0.10s, SPS: 9.96
+2025-05-19 19:05:55,718 - INFO -   Epsilon: 1.000
+2025-05-19 19:05:55,718 - INFO -   Action Record: [1]
+2025-05-19 19:05:59,664 - INFO - --- Episode 2 Finished ---
+2025-05-19 19:05:59,665 - INFO -   Global Steps: 28, Episode Length: 27, Episode Return: 1.60
+2025-05-19 19:05:59,665 - INFO -   Episode Duration: 2.72s, SPS: 9.91
+2025-05-19 19:05:59,665 - INFO -   Epsilon: 1.000
+2025-05-19 19:05:59,665 - INFO -   Action Record: [1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+2025-05-19 19:06:01,286 - ERROR - An error occurred during training: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2025-05-19 19:06:01,295 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-05-52\dueling_cnn_final.pt
+2025-05-19 19:06:01,303 - INFO - Total training time: 0.00 hours.
+2025-05-19 19:06:01,303 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10_lr0.0001_2025-05-19_19-05-52

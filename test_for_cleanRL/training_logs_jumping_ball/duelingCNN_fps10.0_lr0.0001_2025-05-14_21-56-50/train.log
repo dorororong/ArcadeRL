@@ -1,0 +1,44 @@
+2025-05-14 21:56:50,443 - INFO - Logging to: training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_21-56-50
+2025-05-14 21:56:50,444 - INFO - Arguments: Namespace(algo='dueling', seed=42, total_timesteps=1000000, num_episodes=10000, lr=0.0001, buffer_size=100000, gamma=0.99, batch_size=32, target_update=1000, train_frequency=4, eps_start=1.0, eps_end=0.01, eps_decay=200000, alpha=0.6, beta_start=0.4, beta_frames=500000, cnn_features_dim=256, clip_grad_norm=10.0, env_fps=10.0, env_debug=True, env_save_frames=False, env_initial_refresh=False, log_dir_base='training_logs_jumping_ball', log_interval=1000, save_interval=50)
+2025-05-14 21:56:50,444 - INFO - Using device: cpu
+2025-05-14 21:56:51,073 - INFO - Observation space: Box(0, 255, (1, 32, 64), uint8)
+2025-05-14 21:56:51,074 - INFO - Action space: Discrete(2)
+2025-05-14 21:56:52,670 - INFO - --- Episode 1 Finished ---
+2025-05-14 21:56:52,670 - INFO -   Global Steps: 1, Episode Length: 1, Episode Return: -10.00
+2025-05-14 21:56:52,670 - INFO -   Episode Duration: 0.00s, SPS: 245.99
+2025-05-14 21:56:52,671 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:52,671 - INFO -   Action Record: [1]
+2025-05-14 21:56:54,442 - INFO - --- Episode 2 Finished ---
+2025-05-14 21:56:54,442 - INFO -   Global Steps: 15, Episode Length: 14, Episode Return: 0.30
+2025-05-14 21:56:54,443 - INFO -   Episode Duration: 1.42s, SPS: 9.88
+2025-05-14 21:56:54,443 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:54,443 - INFO -   Action Record: [1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0]
+2025-05-14 21:56:54,871 - INFO - --- Episode 3 Finished ---
+2025-05-14 21:56:54,873 - INFO -   Global Steps: 16, Episode Length: 1, Episode Return: -1.00
+2025-05-14 21:56:54,873 - INFO -   Episode Duration: 0.10s, SPS: 9.87
+2025-05-14 21:56:54,875 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:54,875 - INFO -   Action Record: [1]
+2025-05-14 21:56:55,198 - INFO - --- Episode 4 Finished ---
+2025-05-14 21:56:55,198 - INFO -   Global Steps: 17, Episode Length: 1, Episode Return: -10.00
+2025-05-14 21:56:55,199 - INFO -   Episode Duration: 0.00s, SPS: 0.00
+2025-05-14 21:56:55,199 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:55,199 - INFO -   Action Record: [0]
+2025-05-14 21:56:56,641 - INFO - --- Episode 5 Finished ---
+2025-05-14 21:56:56,643 - INFO -   Global Steps: 28, Episode Length: 11, Episode Return: -0.00
+2025-05-14 21:56:56,643 - INFO -   Episode Duration: 1.11s, SPS: 9.91
+2025-05-14 21:56:56,643 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:56,643 - INFO -   Action Record: [0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1]
+2025-05-14 21:56:56,966 - INFO - --- Episode 6 Finished ---
+2025-05-14 21:56:56,966 - INFO -   Global Steps: 29, Episode Length: 1, Episode Return: -10.00
+2025-05-14 21:56:56,967 - INFO -   Episode Duration: 0.00s, SPS: 0.00
+2025-05-14 21:56:56,967 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:56,967 - INFO -   Action Record: [1]
+2025-05-14 21:56:57,388 - INFO - --- Episode 7 Finished ---
+2025-05-14 21:56:57,388 - INFO -   Global Steps: 31, Episode Length: 2, Episode Return: -9.90
+2025-05-14 21:56:57,389 - INFO -   Episode Duration: 0.10s, SPS: 19.61
+2025-05-14 21:56:57,389 - INFO -   Epsilon: 1.000
+2025-05-14 21:56:57,391 - INFO -   Action Record: [0, 1]
+2025-05-14 21:56:57,815 - ERROR - An error occurred during training: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2025-05-14 21:56:57,825 - INFO - Final model saved to training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_21-56-50\dueling_cnn_final.pt
+2025-05-14 21:56:57,895 - INFO - Total training time: 0.00 hours.
+2025-05-14 21:56:57,895 - INFO - Training finished. Logs and models are in: training_logs_jumping_ball\duelingCNN_fps10.0_lr0.0001_2025-05-14_21-56-50
